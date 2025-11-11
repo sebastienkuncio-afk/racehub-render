@@ -1,0 +1,5 @@
+{
+  "name": "RaceHub Render",
+  "description": "A React and Tailwind CSS implementation of the RaceHub UI, focusing on replicating the visual design and layout of the original project. This is a frontend-only demonstration without any backend functionality.",
+  "requestFramePermissions": []
+}
