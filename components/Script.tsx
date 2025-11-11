@@ -10,7 +10,7 @@ const Script: React.FC = () => {
 
     try {
       // This is the live URL for your server deployed on Render.com
-      const response = await fetch('https://racehub-puppeteer-server.onrender.com/run-script');
+      const response = await fetch('https://racehub-render-backend.onrender.com/run-script');
 
       // Check if the server responded with an error (e.g., script failed)
       if (!response.ok) {
