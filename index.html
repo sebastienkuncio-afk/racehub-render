@@ -64,10 +64,17 @@
         -moz-appearance: textfield;
       }
     </style>
-<script type="importmap">
+    <!-- 
+      This import map tells the browser how to load React modules from a CDN.
+      It's a modern way to use libraries without a build step.
+      - "react" is the main React library.
+      - "react-dom/client" is the part of React used to render the app into the DOM.
+    -->
+    <script type="importmap">
 {
   "imports": {
-    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react": "https://esm.sh/react@18.2.0",
+    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "puppeteer": "https://aistudiocdn.com/puppeteer@^24.29.1",
@@ -77,14 +84,17 @@
   }
 }
 </script>
-<!-- Add Babel Standalone for in-browser JSX/TSX transpilation -->
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-<link rel="stylesheet" href="/index.css">
-</head>
+    <!-- Add Babel Standalone for in-browser JSX/TSX transpilation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
   <body class="bg-slate-900">
     <div id="root"></div>
-    <!-- Changed script type to text/babel to enable transpilation. Added data-type="module" to handle ES modules. -->
+    <!-- 
+      This script tag loads your main application file.
+      - type="text/babel": Tells the Babel library to transform this script.
+      - data-type="module": A hint for Babel to understand import/export syntax.
+      - src="/index.tsx": The entry point of your React application.
+    -->
     <script type="text/babel" data-type="module" src="/index.tsx"></script>
-  <script type="module" src="/index.tsx"></script>
-</body>
+  </body>
 </html>
